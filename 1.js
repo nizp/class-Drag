@@ -10,8 +10,8 @@ function Drag(id){
 
 Drag.prototype.fnDown = function(ev){
 
-	this.disX = ev.pageX - this.obj.offsetLeft;
-	this.disY = ev.pageY - this.obj.offsetTop;
+	this.disX = ev.clientX - this.obj.offsetLeft;
+	this.disY = ev.clientY - this.obj.offsetTop;
 	
 }
 
