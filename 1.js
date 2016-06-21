@@ -11,6 +11,7 @@ function Drag(id){
 Drag.prototype.fnDown = function(ev){
 	
 	var that = this;
+
 	this.disX = ev.pageX - this.obj.offsetLeft;
 	this.disY = ev.pageY - this.obj.offsetTop;
 	
