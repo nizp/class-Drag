@@ -9,14 +9,15 @@ function Drag(id){
 }
 
 Drag.prototype.fnDown = function(ev){
-
+	
+	var _this = this;
 	this.disX = ev.pageX - this.obj.offsetLeft;
 	this.disY = ev.pageY - this.obj.offsetTop;
 	
 	document.addEventListener('mousemove',move);
 	
 	function move(ev){
-		
+		_this.fnMove(ev);
 	}
 }
 Drag.prototype.fnMove = function(ev){
