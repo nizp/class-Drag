@@ -16,14 +16,23 @@ Drag.prototype.fnDown = function(ev){
 	this.disY = ev.pageY - this.obj.offsetTop;
 	
 	document.addEventListener('mousemove',move);
-	document.addEventListener('mousedown',fnDown);
+	document.addEventListener('mouseup',Up);
 	
 	function move(ev){
 		that.fnMove(ev);
 	}
+	
+	function Up(){
+		that.fnUp(move,Up);
+	}
+	
 }
 Drag.prototype.fnMove = function(ev){
 	this.obj.style.left = ev.pageX - this.disX + 'px';
 	this.obj.style.top = ev.pageY - this.disY + 'px';
+}
+Drag.prototype.fnUp = function(move,up){
+	document.removeEventListener('mousemove',move);
+	document.removeEventListener('mouseup',up);
 }
 
