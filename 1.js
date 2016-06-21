@@ -9,5 +9,6 @@ function Drag(id){
 }
 
 Drag.prototype.fnDown = function(ev){
-	alert(1);
+	this.disX = ev.clientX - this.obj.offsetLeft;
+	this.disY = ev.clientY - this.obj.offsetTop;
 }
