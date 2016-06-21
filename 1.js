@@ -10,8 +10,18 @@ function Drag(id){
 
 Drag.prototype.fnDown = function(ev){
 
-	this.disX = ev.clientX - this.obj.offsetLeft;
-	this.disY = ev.clientY - this.obj.offsetTop;
+	this.disX = ev.pageX - this.obj.offsetLeft;
+	this.disY = ev.pageY - this.obj.offsetTop;
 	
+	document.addEventListener('mousemove',move);
+	
+	function move(ev){
+		
+	}
+	
+}
+Drag.prototype.fnMove = function(ev){
+	this.obj.style.left = ev.pageX - this.disX + 'px';
+	this.obj.style.top = ev.pageY - this.disY + 'px';
 }
 
